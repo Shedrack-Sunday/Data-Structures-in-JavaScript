@@ -1,4 +1,6 @@
-/* In this challenge, you are required to calculate and print the sum of the elements in an array, keeping in mind that some of those integers may be quite large.
+/* 
+
+In this challenge, you are required to calculate and print the sum of the elements in an array, keeping in mind that some of those integers may be quite large.
 
 Function Description
 
@@ -34,7 +36,9 @@ Output
 /*
 Time Complexity: Because each element in the array will be visited only one time, the time complexity is O(n), where n represents the number of elements in the array.
 
-Space Complexity: This approach will use a constant amount of space, making the space complexity O(1). */
+Space Complexity: This approach will use a constant amount of space, making the space complexity O(1). 
+
+*/
 
 
 function aVeryBigSum(ar) {
