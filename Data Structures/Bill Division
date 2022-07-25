@@ -1,0 +1,55 @@
+/**
+ Two friends Anna and Brian, are deciding how to split the bill at a dinner. Each will only pay for the items they consume. Brian gets the check and calculates Anna's portion. You must determine if his calculation is correct.
+
+For example, assume the bill has the following prices: bill=[2,4,6]. Anna declines to eat item k=bill[2] which costs 6. If Brian calculates the bill correctly, Anna will pay (2 + 4)/2 = 3. If he includes the cost of bill[2], he will calculate (2 + 4 + 6)/2 = 6. In the second case, he should refund 3 to Anna.
+
+
+
+
+ */
+
+
+function bonAppetit(bill, k, b) {
+    const sum = bill.reduce((r, v) => r + v, 0);
+    const result = (sum - bill[k])/2;
+    if (b - result === 0) console.log('Bon Appetit');
+    else console.log(b - result);
+}
+
+function bonAppetit(bill, k, b) {
+  
+    let sum = 0
+    
+    // Traverse through the bill array
+    for(let i = 0; i < bill.length; i++){
+      
+      // Only add to the items if bill index is not equal to the mentioned index
+      if(i != k){
+        sum+= bill[i];
+      }
+    }
+    
+    // Check if anna overpaid Brain
+    if((sum/2) === b){
+      return "Bon Appetit";
+    }else{
+      return Math.abs(b - (sum/2));
+    }
+  
+  }
+  
+  console.log(bonAppetit([3, 10, 2, 9], 1, 12));
+  console.log(bonAppetit([3, 10, 2, 9], 1, 7));
+
+
+  function bonAppetit(bill, k, b) {
+    // Write your code here
+    let result = ''
+    bill.splice(k,1)
+    const billCost = bill.reduce((previous, next) => previous+next, 0) / 2
+    if (billCost == b){
+        result = 'Bon Appetit'
+    } else {
+        result = b - billCost
+    }
+    console.log(result)
